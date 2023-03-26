@@ -1,0 +1,29 @@
+.logo {
+    margin: 1rem;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.login {
+    background: linear-gradient(pink, white);
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-around;
+}
+
+.loginImage {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+}
+
+.loginButton {
+    width: 15rem;
+    border-radius: 1rem;
+}
+
+.registration {
+    flex-direction: column;
+    justify-content: space-around;
+}

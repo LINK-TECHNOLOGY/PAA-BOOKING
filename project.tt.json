@@ -1,0 +1,9 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "paa-booking",
+  "appid": "testAppId",
+  "setting": {
+    "es6": false,
+    "minified": false
+  }
+}

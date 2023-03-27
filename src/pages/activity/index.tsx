@@ -2,14 +2,14 @@ import React from 'react';
 import { View, Text } from '@tarojs/components';
 import './index.scss';
 
-const Mine: React.FC = () => {
+const Activity: React.FC = () => {
   return (
     <View>
       <Text>
-        Hello World!!!
+        普通活动
       </Text>
     </View>
   );
 };
 
-export default Mine;
+export default Activity;

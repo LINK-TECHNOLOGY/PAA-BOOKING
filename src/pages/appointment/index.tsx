@@ -2,14 +2,14 @@ import React from 'react';
 import { View, Text } from '@tarojs/components';
 import './index.scss';
 
-const Mine: React.FC = () => {
+const Appointment: React.FC = () => {
   return (
     <View>
       <Text>
-        Hello World!!!
+        预约页面
       </Text>
     </View>
   );
 };
 
-export default Mine;
+export default Appointment;

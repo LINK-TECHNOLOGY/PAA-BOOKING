@@ -5,9 +5,60 @@ windows用户建议使用wsl进行开发
 
 https://learn.microsoft.com/en-us/windows/wsl/
 
+
+### 不使用wsl
+
+1.安装微信开发者工具（有问题和使用说明可看文档
+
+
+https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html
+
+
+微信开发者工具主要用来提供小程序模拟器，代码编辑推荐还是使用vscode
+
+
+2.安装nodejs环境和npm包管理工具
+
+根据自己电脑选择版本即可
+
+https://nodejs.cn/download/
+
+安装 选择Add to PATH 自动配置到path环境，然后一路next
+
+#### 测试是否安装成功
+win+r输入cmd打开命令行，输入node，显示版本，表示安装成功
+
+由于node.js默认配置了npm，所以不用单独下载和配置npm了，只要node.js安装成功即可
+win+r输入cmd打开命令行，输入npm，显示当前npm版本。
+
+
+3.安装pnpm
+
+```
+# 命令行输入
+npm install -g pnpm@7.12.2
+
+# 测试安装成功
+pnpm -v
+# 7.12.2
+```
+
+如果以后使用pnpm发现很慢，设置一下镜像源
+
+```
+pnpm config set registry https://registry.npm.taobao.org/
+
+# 检查设置成果
+pnpm config get registry
+
+```
+
+接下来跳到本文档的‘安装代码规范工具’继续
+
+
 ## 以下适用macos和linux环境
 
-111111
+
 ### 终端推荐使用zsh
 
 以下为可选操作，使用其它命令行后续操作应该只在配置镜像源时有区别

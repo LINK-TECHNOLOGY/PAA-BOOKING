@@ -1,0 +1,21 @@
+.logo{
+  flex:1;
+  height: 160px;
+  width: 160px;
+  align-items: center;
+  font-size: large;
+}
+
+.title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.new-button {
+  // display: block;
+  margin-top: 2vh;
+  font-size: 3vh;
+  width: 150px
+}

@@ -18,13 +18,13 @@ export default defineAppConfig({
     selectedColor: '#515151',
     borderStyle: 'white',
     list: [{
-      selectedIconPath: 'assets/tabBar/index_selected.jpg',
-      iconPath: 'assets/tabBar/index.jpg',
+      selectedIconPath: 'common/assets/tabBar/index_selected.jpg',
+      iconPath: 'common/assets/tabBar/index.jpg',
       pagePath: 'pages/index/index',
       text: '首页'
     }, {
-      selectedIconPath: 'assets/tabBar/mine_selected.jpg',
-      iconPath: 'assets/tabBar/mine.jpg',
+      selectedIconPath: 'common/assets/tabBar/mine_selected.jpg',
+      iconPath: 'common/assets/tabBar/mine.jpg',
       pagePath: 'pages/mine/index',
       text: '我的'
     }]

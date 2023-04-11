@@ -20,6 +20,8 @@ module.exports = {
   rules: {
     semi: [2, 'always'],
     '@typescript-eslint/semi': ['error', 'always'],
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
     'max-len': ['warn', { code: 80, ignoreComments: true }]
   }
 };

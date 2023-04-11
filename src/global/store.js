@@ -1,18 +1,25 @@
-import { makeAutoObservable } from 'mobx'
-import { createContext } from 'react'
+import { action, computed, makeObservable, observable } from 'mobx';
+import { createContext } from 'react';
 
-// const Store = observable({
-//     counter: 1,
-//     res(){
-//         return this.counter * 2;
-//     },
-// })
 class Store {
-  counter = 1
-  constructor () {
-    makeAutoObservable(this)
+  constructor (value) {
+    makeObservable(this, {
+      Info: observable,
+      setInfo: action,
+      getInfo: computed
+    });
+    this.Info = value;
+  }
+
+  Info;
+
+  setInfo = (info) => {
+    this.Info = info || {};
+  };
+
+  get getInfo () {
+    return this.Info.a;
   }
 }
 
-
-export default createContext(new Store())
+export default createContext(new Store({}));

@@ -1,39 +1,57 @@
 import { View, Image } from '@tarojs/components';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Taro from '@tarojs/taro';
 import { AtButton, AtInput } from 'taro-ui';
 import LogoImage from '../../assets/icons/logo.jpg';
 import './index.scss';
+import { getUserInfo, postUserRegister } from '../../apis/api';
+import { type UserInfoProp } from '../../utils/paatype';
+import store from '../../global/store';
+import { observer } from 'mobx-react';
 
 const Login: React.FC = () => {
-  const [studentId, setStudentId] = useState(0);
+  const [studentId, setStudentId] = useState('');
   const [name, setName] = useState('');
+  const [logined, setLogined] = useState(false);
+  const [userInfo, setUserInfo] = useState<UserInfoProp>();
+  const { setInfo } = useContext(store);
 
-  const handleLogin = (): void => {
-    // get userinfo and store them
-    // console.log(studentId + ' ' + name)
-    console.log(`${studentId} and ${name}`);
-  };
-
-  const checkOpenId = (): boolean => {
-    // ask for openid and check if the user had...
-    // console.log('ooo')
-    return false;
+  const handleLogin = async () => {
+    const tempInfo: UserInfoProp = {
+      userId: studentId,
+      userName: name
+    };
+    await postUserRegister(tempInfo).then(res => {
+      setUserInfo(res);
+      setLogined(true);
+    }).catch(err => {
+      console.log(err);
+    });
   };
 
   useEffect(() => {
-    // use openid check if the user had already registered.
-    // if true, nevigate to index.
-    // else, show this page.
-    const check = checkOpenId();
-    if (check) {
-      // get userinfo and store them
+    const getUserLogin = async () => {
+      await getUserInfo().then((res: UserInfoProp) => {
+        if (res.userId !== '') {
+          setUserInfo(res);
+          setLogined(true);
+        }
+      });
+    };
 
+    getUserLogin().catch(err => {
+      console.log(err);
+    });
+  });
+
+  useEffect(() => {
+    if (logined) {
+      setInfo(userInfo as UserInfoProp);
       void Taro.switchTab({
         url: '/pages/index/index'
       });
     }
-  });
+  }, [logined]);
 
   return (
     <View className='login'>
@@ -47,7 +65,7 @@ const Login: React.FC = () => {
           type='number'
           placeholder='请输入学号'
           value={studentId.toString()}
-          onChange={(value) => { setStudentId(value as number); }}
+          onChange={(value) => { setStudentId(value as string); }}
           name=''
         />
         <AtInput
@@ -59,7 +77,10 @@ const Login: React.FC = () => {
           onChange={(value) => { setName(value as string); }}
           name=''
         />
-        <AtButton className='loginButton' type='primary' onClick={handleLogin}>
+        <AtButton
+          className='loginButton'
+          type='primary'
+          onClick={handleLogin}>
           登录
         </AtButton>
       </View>
@@ -67,4 +88,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default observer(Login);

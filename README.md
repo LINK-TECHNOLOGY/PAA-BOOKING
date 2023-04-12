@@ -10,6 +10,7 @@ https://learn.microsoft.com/en-us/windows/wsl/
 
 1.安装微信开发者工具（有问题和使用说明可看文档
 
+
 https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html
 
 
@@ -55,8 +56,12 @@ pnpm config get registry
 接下来跳到本文档的‘安装代码规范工具’继续
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> b4f3b06c7a9405347feaa73251074197e047d4b0
 ## 以下适用macos和linux环境
+
 
 ### 终端推荐使用zsh
 

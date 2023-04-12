@@ -16,10 +16,11 @@
       "outputPath": ""
     },
     "minifyWXSS": false,
-    "minifyWXML": false
+    "minifyWXML": false,
+    "condition": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.30.3",
+  "libVersion": "2.17.0",
   "srcMiniprogramRoot": "dist/",
   "packOptions": {
     "ignore": [],

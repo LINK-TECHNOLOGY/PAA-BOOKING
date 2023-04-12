@@ -1,5 +1,14 @@
 .tags{
     display: flex;
     flex-direction: row;
-    background-color: rgb(0, 110, 255);
+    justify-content: space-around;
+    padding: 0 5px;
+    .tag{
+        background-color: rgb(162,208,241);
+        width: 24%;
+        border-radius: 0;
+        box-sizing: border-box;
+        border: 3px solid rgb(186,186,186) ;
+        font-weight: 600;
+    }
 }

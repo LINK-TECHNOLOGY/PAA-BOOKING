@@ -16,7 +16,8 @@
       "outputPath": ""
     },
     "minifyWXSS": false,
-    "minifyWXML": false
+    "minifyWXML": false,
+    "condition": false
   },
   "compileType": "miniprogram",
   "libVersion": "2.30.3",

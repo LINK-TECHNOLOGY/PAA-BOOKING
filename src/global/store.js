@@ -18,7 +18,7 @@ class Store {
   };
 
   get getInfo () {
-    return this.Info.a;
+    return this.Info;
   }
 }
 

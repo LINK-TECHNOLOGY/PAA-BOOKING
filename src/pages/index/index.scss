@@ -1,4 +1,4 @@
-.logo{
+.logo {
   flex:1;
   height: 160px;
   width: 160px;
@@ -6,12 +6,18 @@
   font-size: large;
 }
 
-.title{
+.title {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.title-text {
+  font-family: 'biaoTiHei';
+  font-size: 1.8rem;
+  color: #4095E5;
+  margin: 0.3rem 1rem;
+}
 
 .new-button {
   // display: block;

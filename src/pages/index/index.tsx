@@ -1,19 +1,44 @@
-import { View, Image } from "@tarojs/components";
+
+import { View, Image,Text } from "@tarojs/components";
 import React, { useState } from "react";
 import "./index.scss";
 import LogoImage from "../../assets/icons/logo.png";
 import TextTitle from "../../assets/icons/MentalTitle.png";
 import { AtButton, AtDivider } from "taro-ui";
+import Tags from './tags'
 
 const data = {
   activity: "name",
   state: false
 };
 
+// 暂时用来
+const STAT = {
+  ALL: 0,
+  DOING: 1,
+  DONE: 2,
+  NOT_DONE: 3
+}
+
+
+
 const Index: React.FC = () => {
   const [activityState, setActivityState] = useState(data.state);
   const [backgroundColor, setBackgroundColor] = useState("write");
   const [color, setColor] = useState("black");
+
+  const {DOING,DONE,NOT_DONE} = STAT
+  const allTasks = [
+    {name:'进行中1',stat:DOING},
+    {name:'进行中2',stat:DOING},
+    {name:'进行中3',stat:DOING},
+    {name:'已开展1',stat:DONE},
+    {name:'已开展2',stat:DONE},
+    {name:'已开展3',stat:DONE},
+    {name:'未开展1',stat:NOT_DONE},
+    {name:'未开展2',stat:NOT_DONE},
+  ]
+  const [currentStat,setCurrentStat] = useState(0)
 
   const handleClick = () => {
     setActivityState(!activityState);
@@ -33,6 +58,16 @@ const Index: React.FC = () => {
         <Image className="at-col at-col-2.5" src={LogoImage} mode="widthFix" />
       </View>
       <AtDivider height="50" />
+      {allTasks.map((item)=>{
+        if(currentStat===0){
+          return <Text>{item.name}</Text>
+        }else if(currentStat===item.stat){
+          return <Text>{item.name}</Text>
+        }
+      })}
+      <AtDivider height="50" />
+      <Tags setCurrentStat={setCurrentStat}></Tags>
+      <AtDivider height="50" />
       <AtButton
         className="new-button"
         customStyle={{ backgroundColor: backgroundColor, color: color }}
@@ -43,4 +78,4 @@ const Index: React.FC = () => {
   );
 };
 
-export default Index;
+export default Index

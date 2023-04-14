@@ -3,6 +3,7 @@ import React from 'react';
 import 'taro-ui/dist/style/index.scss';
 import './app.scss';
 import Store from './global/store';
+import './assets/style/font.less';
 
 const store = { Store };
 

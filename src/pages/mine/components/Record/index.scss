@@ -1,0 +1,26 @@
+.record-box {
+  width: 16.3rem;
+  height: 3rem;
+  background-color: #DE868F;
+  border-color: #BBBBBB;
+  border-width: 2px;
+  border-radius: 0.2rem;
+  border-style: solid;
+  padding: 0.8rem 1rem;
+  margin: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.record-content {
+  display: flex;
+  flex-direction: column;
+  color: #347CAF;
+}
+
+.record-state {
+  display: flex;
+  font-size: small;
+  color: green;
+}

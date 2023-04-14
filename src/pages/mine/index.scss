@@ -1,0 +1,41 @@
+.title-text {
+  font-family: 'biaoTiHei';
+  font-size: 1.8rem;
+  color: #4095E5;
+}
+
+.title-box {
+  display: flex;
+  justify-content: center;
+}
+
+.avator-image {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+.avator-box {
+  margin: 0.8rem;
+}
+
+.information-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.information-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.record-title {
+  font-size: 1.3rem;
+  font-weight: bolder;
+  margin: 0.8rem;
+}

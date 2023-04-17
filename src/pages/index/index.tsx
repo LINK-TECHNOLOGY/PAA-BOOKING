@@ -4,6 +4,7 @@ import './index.scss';
 import LogoImage from '../../assets/icons/logo.png';
 import { AtButton, AtDivider } from 'taro-ui';
 import Tags from './tags';
+import Taro from '@tarojs/taro';
 
 const data = {
   activity: 'name',
@@ -41,6 +42,7 @@ const Index: React.FC = () => {
     setBackgroundColor(activityState ? 'white' : 'red');
     setColor(activityState ? 'black' : 'white');
     console.log(activityState);
+    void Taro.navigateTo({ url: '/pages/bigactivity/index' });
   };
 
   return (

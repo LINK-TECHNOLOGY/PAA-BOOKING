@@ -1,15 +1,25 @@
-/* eslint-disable max-len */
 import React, { useState } from 'react';
 import { View } from '@tarojs/components';
-import { AtIcon, AtModalContent, AtModalHeader, AtModal, AtButton } from 'taro-ui';
+import {
+  AtIcon,
+  AtModalContent,
+  AtModalHeader,
+  AtModal, AtButton
+} from 'taro-ui';
 import { sculptureList } from './data';
 import Info from './Info';
 import './index.scss';
 
-const Popover: React.FC<{ title: string }> = (props) => {
+interface PopoverProps {
+  title: string
+};
+
+const Popover: React.FC<PopoverProps> = (props) => {
   const { title } = props;
   const [visible, setVisible] = useState(false);
-  const sculpures = sculptureList.filter(sculptures => sculptures.title === title);
+  const sculpures = sculptureList.filter(sculptures =>
+    sculptures.title === title
+  );
   return (
     <View>
       <AtModal
@@ -32,11 +42,19 @@ const Popover: React.FC<{ title: string }> = (props) => {
             <Info title='预约图片' content={sculpures[0].picture} />
           </View>
           <View className='small'>
-            <AtButton type='secondary' size='small' onClick={() => { setVisible(false); } }>预约成功</AtButton>
+            <AtButton
+              type='secondary'
+              size='small'
+              onClick={() => { setVisible(false); } }>预约成功</AtButton>
           </View>
           </AtModalContent>
         </AtModal>
-    <AtIcon value='map-pin' size='50' color='#66CCFF' onClick={() => { setVisible(true); }}></AtIcon>
+    <AtIcon
+      value='map-pin'
+      size='50'
+      color='#66CCFF'
+      onClick={() => { setVisible(true); }}
+    />
     </View>
   );
 };
